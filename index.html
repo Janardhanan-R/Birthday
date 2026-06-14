@@ -162,7 +162,80 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
 .city-tooltip.show{opacity:1;transform:translateY(0)}
 .journey-quote{text-align:center;margin-top:2rem;font-style:italic;color:var(--silver-light);font-size:clamp(1rem,2vw,1.15rem)}
 
-/* ── CH5 LOVES ── */
+/* ── CH4 DREAM EARNED — Master's Degree Hero ── */
+#dream-earned{
+  position:relative;background:radial-gradient(ellipse at 50% 35%,rgba(212,175,55,.08) 0%,rgba(37,99,235,.1) 30%,var(--bg2) 70%);
+  overflow:hidden;padding:var(--sec-pad) 0
+}
+.degree-deco{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.degree-spotlight{
+  position:absolute;top:10%;left:50%;transform:translateX(-50%);width:min(95%,900px);height:70%;
+  background:radial-gradient(ellipse,rgba(212,175,55,.14) 0%,rgba(37,99,235,.08) 40%,transparent 70%);
+  pointer-events:none;z-index:0;animation:spotlightPulse 6s ease-in-out infinite
+}
+@keyframes spotlightPulse{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.05)}}
+.degree-particle{position:absolute;pointer-events:none;animation:degreeParticleFloat 12s ease-in-out infinite}
+@keyframes degreeParticleFloat{0%,100%{transform:translateY(0) rotate(0deg);opacity:.3}50%{transform:translateY(-35px) rotate(20deg);opacity:.7}}
+.degree-sparkle{position:absolute;width:5px;height:5px;background:var(--gold-light);border-radius:50%;box-shadow:0 0 10px var(--gold-light);animation:degreeSparkle 3s ease-in-out infinite}
+@keyframes degreeSparkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1.3)}}
+.degree-hero{position:relative;z-index:2;max-width:1140px;margin:0 auto;padding:0 var(--grid-pad)}
+.degree-content{
+  display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);
+  gap:clamp(2rem,4vw,3.5rem);align-items:center;margin-top:2rem;text-align:left
+}
+.degree-photo-col{position:relative}
+.degree-stage{position:relative;margin:0;max-width:none}
+.degree-cap-float{
+  position:absolute;top:-2rem;right:5%;font-size:2.8rem;z-index:4;
+  animation:capFloat 4s ease-in-out infinite;filter:drop-shadow(0 4px 12px rgba(212,175,55,.5))
+}
+@keyframes capFloat{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-12px) rotate(8deg)}}
+.degree-frame-wrap{position:relative}
+.degree-glow-ring{
+  position:absolute;inset:-24px;border-radius:20px;
+  background:radial-gradient(ellipse,rgba(212,175,55,.25),transparent 70%);
+  animation:degreeGlowPulse 3s ease-in-out infinite;pointer-events:none;z-index:0
+}
+@keyframes degreeGlowPulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.03)}}
+.degree-frame{
+  position:relative;z-index:1;padding:20px;
+  background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:2px solid rgba(212,175,55,.5);border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.3),0 0 60px rgba(212,175,55,.18),inset 0 0 0 1px rgba(255,255,255,.08);
+  animation:degreeFrameFloat 6s ease-in-out infinite,degreeBorderGlow 4s ease-in-out infinite
+}
+@keyframes degreeFrameFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes degreeBorderGlow{0%,100%{border-color:rgba(212,175,55,.5);box-shadow:0 8px 32px rgba(0,0,0,.3),0 0 40px rgba(212,175,55,.15)}50%{border-color:rgba(245,230,163,.75);box-shadow:0 12px 48px rgba(0,0,0,.35),0 0 80px rgba(212,175,55,.35)}}
+.degree-photo{
+  position:relative;aspect-ratio:4/5;min-height:380px;overflow:hidden;border-radius:8px;
+  background:linear-gradient(145deg,rgba(37,99,235,.25),rgba(11,20,40,.9))
+}
+.degree-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  image-orientation:from-image;-webkit-image-orientation:from-image;
+  animation:degreePhotoZoom 14s ease-in-out infinite
+}
+@keyframes degreePhotoZoom{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.degree-photo img.failed{display:none}
+.degree-photo img.loaded{opacity:1}
+.degree-placeholder{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  background:linear-gradient(145deg,#1e3a6e 0%,#0B1428 60%,#1a2744 100%);color:rgba(255,255,255,.2)
+}
+.degree-photo:has(img.loaded) .degree-placeholder{display:none}
+.degree-placeholder span{font-size:4rem}
+.degree-placeholder p{font-family:var(--display);font-size:1rem;color:var(--gold-light);opacity:.6;font-style:italic}
+.degree-story-col{display:flex;flex-direction:column;gap:1.5rem}
+.degree-story p{
+  font-size:clamp(1rem,2vw,1.12rem);color:var(--silver-light);line-height:1.9;margin-bottom:0
+}
+.degree-quote{
+  padding:1.5rem 1.75rem;margin-top:.5rem;
+  font-family:var(--display);font-size:clamp(1rem,2vw,1.15rem);color:var(--gold-light);font-style:italic;line-height:1.7;
+  border-left:3px solid var(--gold);background:rgba(37,99,235,.08);border-radius:0 var(--card-radius) var(--card-radius) 0
+}
+
+/* ── CH6 LOVES ── */
 #loves{background:var(--bg2)}
 .love-card{cursor:pointer;text-align:center;padding:2.5rem 1.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .love-card .emoji{font-size:3rem;margin-bottom:.75rem}
@@ -189,7 +262,93 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
 .mem-overlay{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.88) 100%)}
 .mem-label{position:absolute;bottom:0;left:0;right:0;padding:1.25rem;z-index:1;font-weight:600;font-size:.88rem;line-height:1.4}
 
-/* ── CH8 CONSTELLATION ── */
+/* ── CH8 YEARS — Polaroid Memories ── */
+#years-memories{
+  position:relative;background:radial-gradient(ellipse at 50% 20%,rgba(37,99,235,.12) 0%,var(--bg) 55%);
+  text-align:center;overflow:hidden
+}
+.years-deco{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.years-star{position:absolute;font-size:.9rem;opacity:.4;animation:yearsStarFloat 8s ease-in-out infinite}
+@keyframes yearsStarFloat{0%,100%{transform:translateY(0) rotate(0deg);opacity:.25}50%{transform:translateY(-25px) rotate(15deg);opacity:.6}}
+.years-heart{position:absolute;font-size:.85rem;opacity:.3;animation:yearsHeartFloat 10s ease-in-out infinite}
+@keyframes yearsHeartFloat{0%,100%{transform:translateY(0) scale(1);opacity:.2}50%{transform:translateY(-30px) scale(1.1);opacity:.5}}
+.years-stage{position:relative;max-width:820px;margin:0 auto 3rem;padding:0 var(--grid-pad);z-index:1}
+.years-lines{position:absolute;inset:8% 6%;width:88%;height:84%;pointer-events:none;z-index:0}
+.years-line{stroke:rgba(59,130,246,.22);stroke-width:1.2;stroke-dasharray:6 4;opacity:1;transition:opacity 1.2s var(--ease)}
+.years-polaroid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(1.5rem,4vw,2.5rem);position:relative;z-index:1}
+.polaroid-card{
+  cursor:pointer;opacity:1;transform:translateY(0);
+  transition:transform .5s var(--ease),filter .5s
+}
+.polaroid-card:nth-child(1) .polaroid-frame{--rot:-2.5deg;--float-delay:0s}
+.polaroid-card:nth-child(2) .polaroid-frame{--rot:2deg;--float-delay:.8s}
+.polaroid-card:nth-child(3) .polaroid-frame{--rot:1.5deg;--float-delay:1.6s}
+.polaroid-card:nth-child(4) .polaroid-frame{--rot:-1.8deg;--float-delay:2.4s}
+@keyframes polaroidFloat{0%,100%{transform:translateY(0) rotate(var(--rot,0deg))}50%{transform:translateY(-8px) rotate(calc(var(--rot,0deg) + .5deg))}}
+.polaroid-card.on:hover,.polaroid-card.on:focus-visible{transform:translateY(-6px)}
+.polaroid-card.on:hover .polaroid-frame,.polaroid-card.on:focus-visible .polaroid-frame{
+  transform:translateY(-10px) rotate(0deg) scale(1.03);
+  filter:drop-shadow(0 20px 40px rgba(37,99,235,.35))
+}
+.polaroid-frame{
+  transform:rotate(var(--rot,0deg));animation:polaroidFloat 5s ease-in-out infinite;animation-delay:var(--float-delay,0s);
+  background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(240,245,255,.92));
+  padding:14px 14px 20px;border-radius:var(--card-radius);
+  box-shadow:0 4px 6px rgba(0,0,0,.08),0 20px 50px rgba(37,99,235,.15),inset 0 0 0 1px rgba(255,255,255,.6);
+  border:1px solid rgba(37,99,235,.12);transition:box-shadow var(--anim),border-color var(--anim),transform .5s var(--ease),filter .5s;
+  height:100%;display:flex;flex-direction:column
+}
+.polaroid-photo{min-height:260px;flex:1}
+.polaroid-card:hover .polaroid-frame,.polaroid-card:focus-visible .polaroid-frame{
+  border-color:var(--royal-light);box-shadow:0 8px 30px var(--royal-glow),0 0 0 2px rgba(37,99,235,.35),0 25px 60px rgba(0,0,0,.25)
+}
+.polaroid-photo{
+  position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;
+  background:var(--photo-bg,linear-gradient(145deg,rgba(37,99,235,.2),rgba(11,20,40,.85)))
+}
+.polaroid-photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  image-orientation:from-image;-webkit-image-orientation:from-image;
+  transition:transform .6s var(--ease);opacity:1
+}
+.polaroid-photo:has(img.loaded) .polaroid-placeholder{display:none}
+.polaroid-card:hover .polaroid-photo img{transform:scale(1.05)}
+.polaroid-placeholder{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:3rem;background:var(--photo-bg)
+}
+.polaroid-photo img.failed{display:none}
+.polaroid-caption{
+  margin-top:12px;font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:.4rem;color:var(--midnight)
+}
+.polaroid-narrative{
+  font-size:.82rem;color:#4a5568;line-height:1.55;font-style:italic;margin-top:0
+}
+.years-lines .years-line{opacity:1}
+.years-quote{
+  max-width:640px;margin:0 auto;padding:0 var(--grid-pad);
+  font-size:clamp(1.05rem,2.2vw,1.2rem);color:var(--silver-light);font-style:italic;line-height:1.8
+}
+
+/* Photo lightbox */
+#photo-lightbox{
+  position:fixed;inset:0;z-index:9600;background:rgba(4,8,18,.96);backdrop-filter:blur(16px);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s
+}
+#photo-lightbox.open{opacity:1;visibility:visible}
+.photo-lb-wrap{text-align:center;padding:1.5rem;max-width:min(90vw,720px);transform:scale(.7);opacity:0;transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .5s}
+#photo-lightbox.open .photo-lb-wrap{transform:scale(1);opacity:1}
+.photo-lb-img{
+  max-width:100%;max-height:min(70vh,600px);border-radius:8px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px var(--royal-glow);
+  border:3px solid rgba(255,255,255,.12);object-fit:contain;background:var(--midnight)
+}
+.photo-lb-caption{font-family:var(--display);font-size:clamp(1.1rem,3vw,1.4rem);color:var(--gold-light);margin-top:1.5rem;font-style:italic}
+.photo-lb-close{position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,.08);border:1px solid var(--glass-border);color:var(--white);width:48px;height:48px;border-radius:50%;font-size:1.3rem;cursor:pointer;transition:background var(--anim)}
+.photo-lb-close:hover{background:var(--royal)}
+
+/* ── CH9 CONSTELLATION ── */
 #constellation{background:var(--bg);text-align:center}
 .constellation-canvas{position:relative;width:100%;max-width:900px;height:min(70vh,560px);margin:0 auto 2rem;border-radius:var(--card-radius);background:radial-gradient(ellipse at center,rgba(37,99,235,.08) 0%,rgba(7,11,20,.95) 70%);border:1px solid var(--glass-border);overflow:hidden}
 #constellation-svg{position:absolute;inset:0;width:100%;height:100%}
@@ -311,7 +470,7 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
 .burst-el{position:absolute;font-size:1.4rem;animation:bFly 2s ease-out forwards}
 @keyframes bFly{0%{opacity:1;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(var(--bx),var(--by)) scale(.3) rotate(360deg)}}
 
-/* ── CH12 FINALE ── */
+/* ── CH14 FINALE ── */
 #finale{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,rgba(37,99,235,.15) 0%,var(--bg) 70%);position:relative;z-index:10}
 #finale-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
 .f-star{position:absolute;color:var(--gold-light);animation:fAnim 3s ease-in-out infinite;opacity:0}
@@ -356,6 +515,27 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
 .btn-replay:hover{transform:scale(1.05);box-shadow:0 8px 40px var(--royal-glow)}
 .btn-replay:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 
+#img-debug-panel{
+  display:none;position:fixed;bottom:1rem;left:1rem;z-index:99999;
+  background:rgba(7,11,20,.95);border:1px solid var(--glass-border);border-radius:8px;
+  padding:1rem 1.25rem;font-family:monospace;font-size:.75rem;color:var(--silver-light);
+  max-width:280px;line-height:1.8
+}
+#img-debug-panel.visible{display:block}
+#img-debug-panel .ok{color:#4ade80}
+#img-debug-panel .fail{color:#f87171}
+#replay-overlay{
+  position:fixed;inset:0;z-index:9900;background:rgba(4,8,18,.94);backdrop-filter:blur(14px);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;
+  opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility .5s;pointer-events:none
+}
+#replay-overlay.show{opacity:1;visibility:visible;pointer-events:auto}
+#replay-overlay p{
+  font-family:var(--display);font-size:clamp(1.3rem,4vw,2rem);color:var(--gold-light);
+  letter-spacing:.06em;text-align:center;animation:replayPulse 1.2s ease-in-out infinite
+}
+@keyframes replayPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+
 /* ── MODALS / LIGHTBOX ── */
 #lightbox,#story-modal{position:fixed;inset:0;z-index:9500;background:rgba(7,11,20,.92);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity var(--anim),visibility var(--anim)}
 #lightbox.open,#story-modal.open{opacity:1;visibility:visible}
@@ -382,6 +562,12 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   .gift-hero{width:220px;height:220px}
   .gift-body-el{width:200px;height:150px}
   .gift-lid{width:220px;height:55px}
+  .years-polaroid-grid{gap:1.25rem}
+  .polaroid-caption{font-size:.85rem}
+  .degree-cap-float{right:2%;font-size:2rem;top:-1.5rem}
+  .degree-content{grid-template-columns:1fr;text-align:center}
+  .degree-story-col{text-align:center}
+  .degree-photo{min-height:300px}
 }
 @media(max-width:600px){
   .rewards-grid{grid-template-columns:1fr}
@@ -484,11 +670,53 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   </div>
 </section>
 
-<!-- CH4 JOURNEY -->
-<section id="journey" aria-label="Chapter 4 — Journey">
+<!-- CH4 DREAM EARNED -->
+<section id="dream-earned" aria-label="Chapter 4 — A Dream Earned">
+  <div class="degree-deco" id="degree-deco" aria-hidden="true"></div>
+  <div class="degree-spotlight" aria-hidden="true"></div>
+  <div class="sec-glow" style="top:20%;left:50%;transform:translateX(-50%)"></div>
+  <div class="sec-particles" data-sec="degree" aria-hidden="true"></div>
+  <div class="inner" style="position:relative;z-index:1;width:100%;text-align:center">
+    <span class="chapter reveal">Chapter 4</span>
+    <h2 class="sec-title reveal">🎓 A Dream Earned</h2>
+    <p class="sec-sub reveal">"A moment that reflects years of hard work, sacrifice, determination, and success."</p>
+
+    <div class="degree-hero reveal" id="degree-hero">
+      <div class="degree-content">
+        <div class="degree-photo-col">
+          <div class="degree-stage">
+            <div class="degree-cap-float" aria-hidden="true">🎓</div>
+            <div class="degree-frame-wrap" id="degree-frame-wrap">
+              <div class="degree-glow-ring" aria-hidden="true"></div>
+              <div class="degree-frame">
+                <div class="degree-photo">
+                  <img id="degree-photo-img" src="" alt="Kirthana proudly holding her Master's degree certificate with her parents" decoding="async" fetchpriority="high">
+                  <div class="degree-placeholder" aria-hidden="true">
+                    <span>🎓</span>
+                    <p>Loading graduation photo…</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="degree-story-col">
+          <div class="degree-story">
+            <p>From her first day of school to earning a Master's degree in Arizona, Kirthana's journey has been built on determination, resilience, and the unwavering support of her parents.</p>
+            <p>This photograph captures one of the proudest moments of her life.</p>
+          </div>
+          <blockquote class="degree-quote">"Behind every degree is a story of persistence, courage, and belief."</blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CH5 JOURNEY -->
+<section id="journey" aria-label="Chapter 5 — Journey">
   <div class="sec-particles" data-sec="journey" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 4</span>
+    <span class="chapter reveal">Chapter 5</span>
     <h2 class="sec-title reveal">Kirthana's Journey</h2>
     <p class="sec-sub reveal">Chennai → Dubai → Phoenix → Tucson</p>
     <div class="journey-svg-wrap reveal" id="journey-wrap">
@@ -529,48 +757,74 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   </div>
 </section>
 
-<!-- CH5 LOVES -->
-<section id="loves" aria-label="Chapter 5 — Things She Loves">
+<!-- CH6 LOVES -->
+<section id="loves" aria-label="Chapter 6 — Things She Loves">
   <div class="sec-glow" style="bottom:15%;left:10%"></div>
   <div class="sec-particles" data-sec="loves" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 5</span>
+    <span class="chapter reveal">Chapter 6</span>
     <h2 class="sec-title reveal">Things She Loves</h2>
     <p class="sec-sub reveal">The joys that light up her world — click to read the story.</p>
     <div class="grid-12" id="loves-grid"></div>
   </div>
 </section>
 
-<!-- CH6 SERIES -->
-<section id="series" aria-label="Chapter 6 — Favorite Universes">
+<!-- CH7 SERIES -->
+<section id="series" aria-label="Chapter 7 — Favorite Universes">
   <div class="sec-particles" data-sec="series" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 6</span>
+    <span class="chapter reveal">Chapter 7</span>
     <h2 class="sec-title reveal">Favorite Universes</h2>
     <p class="sec-sub reveal">Epic stories she can't get enough of.</p>
     <div class="grid-12" id="series-grid"></div>
   </div>
 </section>
 
-<!-- CH7 MEMORIES -->
-<section id="memories" aria-label="Chapter 7 — Memories">
+<!-- CH8 MEMORIES -->
+<section id="memories" aria-label="Chapter 8 — Favorite Memories With Brother">
   <div class="sec-glow" style="top:30%;right:5%"></div>
   <div class="sec-particles" data-sec="memories" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 7</span>
-    <h2 class="sec-title reveal">Memories Scrapbook</h2>
-    <p class="sec-sub reveal">Pinned moments with Thambi — click to relive.</p>
+    <span class="chapter reveal">Chapter 8</span>
+    <h2 class="sec-title reveal">Favorite Memories With Brother</h2>
+    <p class="sec-sub reveal">Storybook moments with Thambi — scroll down to see the real photographs in the next chapter.</p>
     <div class="grid-12" id="mem-grid"></div>
   </div>
 </section>
 
-<!-- CH8 CONSTELLATION -->
-<section id="constellation" aria-label="Chapter 8 — Constellation">
+<!-- CH9 YEARS — Memories Through The Years -->
+<section id="years-memories" aria-label="Chapter 9 — Memories Through The Years">
+  <div class="years-deco" id="years-deco" aria-hidden="true"></div>
+  <div class="sec-glow" style="top:15%;left:20%"></div>
+  <div class="sec-particles" data-sec="years" aria-hidden="true"></div>
+  <div class="inner" style="position:relative;z-index:1">
+    <span class="chapter reveal">Chapter 9</span>
+    <h2 class="sec-title reveal">📷 Memories Through The Years</h2>
+    <p class="sec-sub reveal">"Some moments become memories. Some memories become treasures."</p>
+
+    <div class="years-stage reveal" id="years-stage">
+      <svg class="years-lines" id="years-lines-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <line class="years-line" x1="25" y1="28" x2="75" y2="28"/>
+        <line class="years-line" x1="25" y1="28" x2="25" y2="72"/>
+        <line class="years-line" x1="75" y1="28" x2="75" y2="72"/>
+        <line class="years-line" x1="25" y1="72" x2="75" y2="72"/>
+        <line class="years-line" x1="25" y1="28" x2="75" y2="72"/>
+        <line class="years-line" x1="75" y1="28" x2="25" y2="72"/>
+      </svg>
+      <div class="years-polaroid-grid" id="years-polaroid-grid"></div>
+    </div>
+
+    <p class="years-quote reveal">"No matter where life takes us, these memories will always feel like home."</p>
+  </div>
+</section>
+
+<!-- CH10 CONSTELLATION -->
+<section id="constellation" aria-label="Chapter 10 — 28 Things That Make Kirthana Amazing">
   <div class="sec-glow" style="top:10%;left:50%;transform:translateX(-50%)"></div>
   <div class="sec-particles" data-sec="constellation" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 8</span>
-    <h2 class="sec-title reveal">28 Stars of Kirthana</h2>
+    <span class="chapter reveal">Chapter 10</span>
+    <h2 class="sec-title reveal">28 Things That Make Kirthana Amazing</h2>
     <p class="sec-sub reveal">A constellation of qualities — click each star as it appears.</p>
     <div class="constellation-canvas reveal" id="constellation-canvas">
       <svg id="constellation-svg" aria-hidden="true"></svg>
@@ -580,11 +834,11 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   </div>
 </section>
 
-<!-- CH9 LETTER -->
-<section id="letter" aria-label="Chapter 9 — Letter">
+<!-- CH11 LETTER -->
+<section id="letter" aria-label="Chapter 11 — Letter">
   <div class="sec-particles" data-sec="letter" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 9</span>
+    <span class="chapter reveal">Chapter 11</span>
     <h2 class="sec-title reveal">A Letter from Thambi</h2>
     <p class="sec-sub reveal">Written with all my love.</p>
     <div class="letter-box reveal">
@@ -593,11 +847,11 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   </div>
 </section>
 
-<!-- CH10 CAKE -->
-<section id="cake" aria-label="Chapter 10 — Cake">
+<!-- CH12 CAKE -->
+<section id="cake" aria-label="Chapter 12 — Cake">
   <div class="sec-particles" data-sec="cake" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 10</span>
+    <span class="chapter reveal">Chapter 12</span>
     <h2 class="sec-title reveal">Make a Wish</h2>
     <p class="sec-sub reveal">Blow out all 28 candles to send your wish to the universe.</p>
     <div class="cake-wrap reveal" id="cake-wrap">
@@ -615,7 +869,7 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
 </section>
 
 <!-- CH11 GIFT — Premium Cinematic Rewards -->
-<section id="gift" aria-label="Chapter 11 — A Surprise Awaits">
+<section id="gift" aria-label="Chapter 13 — A Surprise Awaits">
   <div class="gift-bg" aria-hidden="true">
     <div class="gift-nebula"></div>
     <div class="gift-float-stars" id="gift-float-stars"></div>
@@ -623,7 +877,7 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   <div class="sec-particles" data-sec="gift" aria-hidden="true"></div>
   <div class="inner" style="position:relative;z-index:2;width:100%">
 
-    <span class="gift-chapter-badge reveal">CHAPTER 11</span>
+    <span class="gift-chapter-badge reveal">CHAPTER 13</span>
     <h2 class="gift-headline reveal">A Surprise Awaits</h2>
     <p class="gift-sub reveal">
       Every dream deserves a celebration.<br>
@@ -695,12 +949,12 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
   </div>
 </section>
 
-<!-- CH12 FINALE -->
-<section id="finale" aria-label="Chapter 12 — The Story Continues">
+<!-- CH14 FINALE -->
+<section id="finale" aria-label="Chapter 14 — The Story Continues">
   <div class="sec-particles" data-sec="finale" aria-hidden="true"></div>
   <div id="finale-stars" aria-hidden="true"></div>
   <div class="inner">
-    <span class="chapter reveal">Chapter 12</span>
+    <span class="chapter reveal">Chapter 14</span>
     <div class="finale-inner reveal" id="finale-inner">
       <h2 class="finale-h">The Story Continues...</h2>
       <p class="finale-p">Level 28 Complete ✅</p>
@@ -762,6 +1016,23 @@ section{position:relative;padding:var(--sec-pad) 0;overflow:visible;min-height:a
     <button class="btn-replay reveal" id="btn-replay" type="button">Replay The Journey</button>
   </div>
 </footer>
+
+<!-- Hidden image debug panel — add ?debug=images to URL to show -->
+<div id="img-debug-panel" aria-hidden="true"></div>
+
+<!-- Replay transition overlay -->
+<div id="replay-overlay" aria-hidden="true" role="status" aria-live="polite">
+  <p>✨ Restarting Kirthana's Journey ✨</p>
+</div>
+
+<!-- Photo lightbox (years memories) -->
+<div id="photo-lightbox" role="dialog" aria-label="Photo memory" aria-hidden="true">
+  <button class="photo-lb-close" id="photo-lb-close" aria-label="Close">✕</button>
+  <div class="photo-lb-wrap">
+    <img class="photo-lb-img" id="photo-lb-img" src="" alt="">
+    <p class="photo-lb-caption" id="photo-lb-caption"></p>
+  </div>
+</div>
 
 <!-- Lightbox (memories) -->
 <div id="lightbox" role="dialog" aria-label="Memory detail" aria-hidden="true">
@@ -971,6 +1242,19 @@ class BirthdayMusic {
   pause() { this.paused = true; if (this.timer) clearTimeout(this.timer); }
   resume() { if (!this.playing) return; this.paused = false; this.playLoop(); }
   togglePause() { if (this.paused) { this.resume(); return false; } this.pause(); return true; }
+  stop() {
+    this.playing = false;
+    this.paused = false;
+    if (this.timer) { clearTimeout(this.timer); this.timer = null; }
+    if (this.ctx) {
+      try { this.ctx.close(); } catch (e) {}
+      this.ctx = null;
+    }
+  }
+  async restart() {
+    this.stop();
+    await this.start();
+  }
 }
 
 /* ── Canvas & music init ── */
@@ -1043,6 +1327,133 @@ const MEMORIES = [
   { emoji: '🎲', title: 'Ludo & UNO Nights', text: 'Competitive spirits and endless laughter at the table — nobody plays fair, everybody wins.' },
   { emoji: '🎬', title: 'Movie Marathons', text: 'Popcorn, plots, and precious time side by side — the credits roll but the memories stay.' }
 ];
+
+/* ── Image registry — auto-resolve paths & verify loading ── */
+const IMAGE_REGISTRY = {
+  graduation: {
+    label: 'Graduation Photo',
+    paths: ['photos/masters-degree.jpg', 'photos/masters-degree.JPG', 'photos/Masters-Degree.jpg']
+  },
+  siblings: [
+    { label: 'Brother-Sister Photo 1', paths: ['photos/photo1.jpg', 'photos/Photo1.jpg'] },
+    { label: 'Brother-Sister Photo 2', paths: ['photos/photo2.jpg', 'photos/Photo2.jpg'] },
+    { label: 'Brother-Sister Photo 3', paths: ['photos/photo3.jpg', 'photos/Photo3.jpg'] },
+    { label: 'Brother-Sister Photo 4', paths: ['photos/photo4.jpg', 'photos/Photo4.jpg'] }
+  ]
+};
+
+const PHOTOS_YEARS = [
+  {
+    caption: '💙 Partners in Crime',
+    narrative: 'Side by side through every laugh, every adventure, and every chapter life wrote for them.',
+    bg: 'linear-gradient(145deg,#1e4a8a 0%,#0B1428 100%)', icon: '💙'
+  },
+  {
+    caption: '🌊 Another Day Worth Remembering',
+    narrative: 'Some days are ordinary until you look back and realize they were everything.',
+    bg: 'linear-gradient(145deg,#2563EB 0%,#1a3a6e 50%,#0B1428 100%)', icon: '🌊'
+  },
+  {
+    caption: '☕ Simple Moments, Forever Memories',
+    narrative: 'The quiet moments together — coffee, conversation, and the comfort of family.',
+    bg: 'linear-gradient(145deg,#3B82F6 0%,#1e3a6e 60%,#0B1428 100%)', icon: '☕'
+  },
+  {
+    caption: '✨ Some Memories Never Fade',
+    narrative: 'Years may pass, places may change, but these memories always feel like home.',
+    bg: 'linear-gradient(145deg,#1D4ED8 0%,#2563EB 40%,#0B1428 100%)', icon: '✨'
+  }
+];
+
+const imageLoadState = {};
+
+function probeImage(src) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve({ ok: true, src });
+    img.onerror = () => resolve({ ok: false, src });
+    img.src = src;
+  });
+}
+
+async function resolveImagePath(paths) {
+  for (const p of paths) {
+    const r = await probeImage(p);
+    if (r.ok) return r.src;
+  }
+  return null;
+}
+
+function bindPhotoLoad(img, key, label) {
+  const onSuccess = () => {
+    img.classList.add('loaded');
+    img.classList.remove('failed');
+    imageLoadState[key] = true;
+    renderImageDebugPanel();
+  };
+  const onFail = () => {
+    img.classList.add('failed');
+    img.classList.remove('loaded');
+    imageLoadState[key] = false;
+    console.warn(`[images] Failed to load: ${label}`);
+    renderImageDebugPanel();
+  };
+  img.addEventListener('load', onSuccess, { once: true });
+  img.addEventListener('error', onFail, { once: true });
+  if (img.complete && img.naturalWidth > 0) onSuccess();
+  else if (img.complete) onFail();
+}
+
+async function bootstrapImages() {
+  const gradPath = await resolveImagePath(IMAGE_REGISTRY.graduation.paths);
+  const gradImg = document.getElementById('degree-photo-img');
+  if (gradImg) {
+    if (gradPath) {
+      gradImg.src = gradPath;
+      bindPhotoLoad(gradImg, 'graduation', IMAGE_REGISTRY.graduation.label);
+    } else {
+      gradImg.classList.add('failed');
+      imageLoadState.graduation = false;
+      console.warn('[images] Graduation photo not found');
+    }
+  }
+
+  const siblingPaths = await Promise.all(
+    IMAGE_REGISTRY.siblings.map(s => resolveImagePath(s.paths))
+  );
+
+  document.querySelectorAll('.polaroid-photo img').forEach((img, i) => {
+    const key = `sibling-${i}`;
+    const label = IMAGE_REGISTRY.siblings[i]?.label || `Photo ${i + 1}`;
+    if (siblingPaths[i]) {
+      img.src = siblingPaths[i];
+      bindPhotoLoad(img, key, label);
+    } else {
+      img.classList.add('failed');
+      imageLoadState[key] = false;
+      console.warn(`[images] Failed to load: ${label}`);
+    }
+  });
+
+  document.getElementById('years-stage')?.classList.add('lines-on');
+  renderImageDebugPanel();
+}
+
+function renderImageDebugPanel() {
+  const panel = document.getElementById('img-debug-panel');
+  if (!panel) return;
+  const show = new URLSearchParams(location.search).get('debug') === 'images';
+  panel.classList.toggle('visible', show);
+  if (!show) return;
+  const rows = [
+    ['graduation', IMAGE_REGISTRY.graduation.label],
+    ...IMAGE_REGISTRY.siblings.map((s, i) => [`sibling-${i}`, s.label])
+  ];
+  panel.innerHTML = '<strong>Images Loaded Successfully</strong><br>' + rows.map(([k, label]) => {
+    const ok = imageLoadState[k];
+    return `<span class="${ok ? 'ok' : 'fail'}">${ok ? '✓' : '✗'} ${label}</span>`;
+  }).join('<br>');
+}
 
 /* 28 constellation stars — label + trait text */
 const STARS_28 = [
@@ -1164,14 +1575,30 @@ function buildMemories() {
     </div>`).join('');
 }
 
+function buildYearsMemories() {
+  document.getElementById('years-polaroid-grid').innerHTML = PHOTOS_YEARS.map((p, i) => `
+    <div class="polaroid-card" tabindex="0" role="button" data-idx="${i}" aria-label="View photo: ${p.caption}">
+      <div class="polaroid-frame">
+        <div class="polaroid-photo" style="--photo-bg:${p.bg}">
+          <img src="" alt="Memory ${i + 1} — Kirthana and Thambi" decoding="async">
+          <div class="polaroid-placeholder" aria-hidden="true">${p.icon}</div>
+        </div>
+        <p class="polaroid-caption">${p.caption}</p>
+        <p class="polaroid-narrative">${p.narrative}</p>
+      </div>
+    </div>`).join('');
+}
+
 function buildAll() {
   buildAbout();
   buildTimeline();
   buildLoves();
   buildSeries();
   buildMemories();
+  buildYearsMemories();
 }
 buildAll();
+bootstrapImages();
 
 /* ── Begin Journey ── */
 document.getElementById('btn-journey').addEventListener('click', () => {
@@ -1211,8 +1638,11 @@ function initFeatures() {
   initQuotes();
   initTimeline();
   initJourney();
+  initDegree();
   initLovesStories();
   initLightbox();
+  initYearsMemories();
+  initPhotoLightbox();
   initConstellation();
   initLetter();
   initCake();
@@ -1262,7 +1692,9 @@ function initShootingStars() {
   }
 }
 
-function initReveal() {
+function initReveal() { setupScrollReveal(); }
+
+function setupScrollReveal() {
   const staggerIds = ['about-grid', 'loves-grid', 'series-grid', 'mem-grid', 'tl-items'];
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -1275,7 +1707,7 @@ function initReveal() {
       }
     });
   }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal:not(.on)').forEach(el => obs.observe(el));
 }
 
 function initQuotes() {
@@ -1288,7 +1720,9 @@ function initQuotes() {
   }, 4500);
 }
 
-function initTimeline() {
+function initTimeline() { setupTimelineAnim(); }
+
+function setupTimelineAnim() {
   const wrap = document.getElementById('timeline-wrap');
   const fill = document.getElementById('tl-fill');
   const items = document.querySelectorAll('.tl-item');
@@ -1317,18 +1751,50 @@ function initTimeline() {
   }
 }
 
+let journeyStarted = false;
+
 function initJourney() {
+  const tooltip = document.getElementById('city-tooltip');
+  const wrap = document.getElementById('journey-wrap');
+
+  document.querySelectorAll('.journey-city').forEach(city => {
+    const showTip = () => {
+      const rect = wrap.getBoundingClientRect();
+      const svgRect = document.getElementById('journey-svg').getBoundingClientRect();
+      const cx = parseFloat(city.querySelector('circle').getAttribute('cx'));
+      const cy = parseFloat(city.querySelector('circle').getAttribute('cy'));
+      tooltip.textContent = '✨ Future Adventure Unlocked ✨';
+      tooltip.style.left = (cx / 1000 * svgRect.width + svgRect.left - rect.left - 100) + 'px';
+      tooltip.style.top = (cy / 500 * svgRect.height + svgRect.top - rect.top - 40) + 'px';
+      tooltip.classList.add('show');
+    };
+    const hideTip = () => tooltip.classList.remove('show');
+    city.addEventListener('mouseenter', showTip);
+    city.addEventListener('focus', showTip);
+    city.addEventListener('mouseleave', hideTip);
+    city.addEventListener('blur', hideTip);
+  });
+
+  setupJourneyAnim();
+}
+
+function setupJourneyAnim() {
   const path = document.getElementById('flight-active');
   const plane = document.getElementById('airplane');
-  const tooltip = document.getElementById('city-tooltip');
   const wrap = document.getElementById('journey-wrap');
   const pathLen = path.getTotalLength();
 
+  journeyStarted = false;
+  path.style.transition = 'none';
+  path.style.strokeDashoffset = '1200';
+  plane.setAttribute('transform', 'translate(219,259)');
+  path.offsetHeight;
+  path.style.transition = '';
+
   if (!reducedMotion) {
-    let started = false;
     const jObs = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting && !started) {
-        started = true;
+      if (entries[0].isIntersecting && !journeyStarted) {
+        journeyStarted = true;
         path.style.transition = 'stroke-dashoffset 6s cubic-bezier(.16,1,.3,1)';
         path.style.strokeDashoffset = '0';
         const dur = 6000, start = performance.now();
@@ -1348,24 +1814,53 @@ function initJourney() {
   } else {
     path.style.strokeDashoffset = '0';
   }
+}
 
-  document.querySelectorAll('.journey-city').forEach(city => {
-    const showTip = () => {
-      const rect = wrap.getBoundingClientRect();
-      const svgRect = document.getElementById('journey-svg').getBoundingClientRect();
-      const cx = parseFloat(city.querySelector('circle').getAttribute('cx'));
-      const cy = parseFloat(city.querySelector('circle').getAttribute('cy'));
-      tooltip.textContent = '✨ Future Adventure Unlocked ✨';
-      tooltip.style.left = (cx / 1000 * svgRect.width + svgRect.left - rect.left - 100) + 'px';
-      tooltip.style.top = (cy / 500 * svgRect.height + svgRect.top - rect.top - 40) + 'px';
-      tooltip.classList.add('show');
-    };
-    const hideTip = () => tooltip.classList.remove('show');
-    city.addEventListener('mouseenter', showTip);
-    city.addEventListener('focus', showTip);
-    city.addEventListener('mouseleave', hideTip);
-    city.addEventListener('blur', hideTip);
+/* CH4 — Master's degree hero: confetti on scroll, particles */
+let degreeDone = false;
+
+function initDegree() {
+  const deco = document.getElementById('degree-deco');
+  if (!deco) return;
+
+  ['🎓','🎓','📜','✨','⭐','🌟','💫'].forEach((icon, i) => {
+    const el = document.createElement('span');
+    el.className = 'degree-particle';
+    el.textContent = icon;
+    el.style.cssText = `left:${Math.random()*92+4}%;top:${Math.random()*88+6}%;font-size:${.9+Math.random()*.8}rem;animation-delay:${i*.6+Math.random()*3}s;animation-duration:${10+Math.random()*6}s`;
+    deco.appendChild(el);
   });
+  for (let i = 0; i < 18; i++) {
+    const sp = document.createElement('span');
+    sp.className = 'degree-sparkle';
+    sp.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s`;
+    deco.appendChild(sp);
+  }
+
+  const degreePt = document.querySelector('.sec-particles[data-sec="degree"]');
+  if (degreePt) for (let i = 0; i < 14; i++) {
+    const p = document.createElement('span');
+    p.className = 'sec-pt';
+    p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*4}s;width:5px;height:5px;background:var(--gold-light);opacity:.6`;
+    degreePt.appendChild(p);
+  }
+
+  setupDegreeAnim();
+}
+
+function setupDegreeAnim() {
+  const hero = document.getElementById('degree-hero');
+  if (!hero || reducedMotion) return;
+
+  const obs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !degreeDone) {
+      degreeDone = true;
+      hero.classList.add('in-view');
+      confetti.burst(120);
+      obs.disconnect();
+    }
+  }, { threshold: .2, rootMargin: '0px 0px -40px 0px' });
+  obs.observe(hero);
 }
 
 /* Loves — click story modal */
@@ -1406,7 +1901,96 @@ function initLightbox() {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && lb.classList.contains('open')) close(); });
 }
 
-/* CH8 — Constellation: 28 stars, scroll reveal, click trait panel */
+/* CH8 — Polaroid memories: scroll reveal, decorations, constellation lines */
+function initYearsMemories() {
+  const deco = document.getElementById('years-deco');
+  const stage = document.getElementById('years-stage');
+  const grid = document.getElementById('years-polaroid-grid');
+  if (!deco || !stage || !grid) return;
+
+  ['✨','⭐','💫','🌟'].forEach((s, i) => {
+    const el = document.createElement('span');
+    el.className = 'years-star';
+    el.textContent = s;
+    el.style.cssText = `left:${Math.random()*90+5}%;top:${Math.random()*85+5}%;animation-delay:${i*.7+Math.random()*2}s`;
+    deco.appendChild(el);
+  });
+  ['💙','💖','💙','💖','💙'].forEach((h, i) => {
+    const el = document.createElement('span');
+    el.className = 'years-heart';
+    el.textContent = h;
+    el.style.cssText = `left:${Math.random()*85+5}%;top:${Math.random()*80+10}%;animation-delay:${i*1.2+Math.random()*3}s`;
+    deco.appendChild(el);
+  });
+
+  grid.querySelectorAll('.polaroid-photo img').forEach((img, i) => {
+    if (img.src && !img.classList.contains('loaded') && !img.classList.contains('failed')) {
+      bindPhotoLoad(img, `sibling-${i}`, IMAGE_REGISTRY.siblings[i]?.label || `Photo ${i + 1}`);
+    }
+  });
+
+  document.getElementById('years-stage')?.classList.add('lines-on');
+}
+
+function setupYearsReveal() {
+  /* Photos are always visible — constellation lines shown on load */
+  document.getElementById('years-stage')?.classList.add('lines-on');
+}
+
+/* Photo lightbox — fullscreen cinematic zoom */
+function initPhotoLightbox() {
+  const lb = document.getElementById('photo-lightbox');
+  const img = document.getElementById('photo-lb-img');
+  const caption = document.getElementById('photo-lb-caption');
+  const grid = document.getElementById('years-polaroid-grid');
+  if (!lb || !grid) return;
+
+  const close = () => {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    img.style.background = '';
+  };
+
+  const open = (idx) => {
+    const p = PHOTOS_YEARS[idx];
+    const cardImg = grid.querySelector(`[data-idx="${idx}"] img`);
+    caption.innerHTML = `<strong>${p.caption}</strong><br><span style="font-size:.9rem;color:var(--silver-light)">${p.narrative}</span>`;
+    img.alt = p.caption;
+    img.classList.remove('failed');
+    if (cardImg?.src && cardImg.classList.contains('loaded')) {
+      img.src = cardImg.src;
+      img.style.background = '';
+    } else {
+      img.removeAttribute('src');
+      img.style.background = p.bg;
+      img.style.minWidth = 'min(80vw, 500px)';
+      img.style.minHeight = '400px';
+    }
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  };
+
+  grid.addEventListener('click', e => {
+    const card = e.target.closest('.polaroid-card');
+    if (!card) return;
+    open(+card.dataset.idx);
+  });
+  grid.addEventListener('keydown', e => {
+    const card = e.target.closest('.polaroid-card');
+    if (!card || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    open(+card.dataset.idx);
+  });
+  document.getElementById('photo-lb-close').addEventListener('click', close);
+  lb.addEventListener('click', e => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) close();
+  });
+}
+
+/* CH9 — Constellation: 28 stars, scroll reveal, click trait panel */
+let constellationRevealed = 0;
+
 function initConstellation() {
   const canvas = document.getElementById('constellation-canvas');
   const container = document.getElementById('constellation-stars');
@@ -1458,19 +2042,31 @@ function initConstellation() {
     return;
   }
 
-  let revealed = 0;
+  setupConstellationReveal();
+}
+
+function setupConstellationReveal() {
+  const canvas = document.getElementById('constellation-canvas');
+  const container = document.getElementById('constellation-stars');
+  const svg = document.getElementById('constellation-svg');
+  if (!canvas || !container) return;
+
+  const stars = container.querySelectorAll('.const-star');
+  const lines = svg.querySelectorAll('.const-line');
+  constellationRevealed = 0;
+
   const obs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) {
       const revealNext = () => {
-        if (revealed >= stars.length) return;
-        stars[revealed].classList.add('on');
+        if (constellationRevealed >= stars.length) return;
+        stars[constellationRevealed].classList.add('on');
         lines.forEach(l => {
           const idx = +l.dataset.lineIdx;
           const [a, b] = CONST_LINES[idx];
-          if (a <= revealed || b <= revealed) l.style.opacity = '1';
+          if (a <= constellationRevealed || b <= constellationRevealed) l.style.opacity = '1';
         });
-        revealed++;
-        if (revealed < stars.length) setTimeout(revealNext, 120);
+        constellationRevealed++;
+        if (constellationRevealed < stars.length) setTimeout(revealNext, 120);
       };
       revealNext();
       obs.disconnect();
@@ -1481,7 +2077,9 @@ function initConstellation() {
 
 /* Typewriter letter */
 let letterDone = false;
-function initLetter() {
+function initLetter() { setupLetterAnim(); }
+
+function setupLetterAnim() {
   const obs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting) { startLetter(); obs.disconnect(); }
   }, { threshold: .3 });
@@ -1533,13 +2131,14 @@ function initCake() {
 }
 
 /* Gift box — 5-stage cinematic opening */
+let giftOpened = false;
+
 function initGift() {
   const hero = document.getElementById('gift-hero');
   const wrap = document.getElementById('gift-wrap');
   const hint = document.getElementById('gift-hint');
   const zone = document.getElementById('gift-rewards-zone');
   const continueBtn = document.getElementById('btn-continue');
-  let opened = false;
 
   /* Ambient sparkles orbiting the box */
   const sparkWrap = document.getElementById('gift-sparkles-wrap');
@@ -1606,8 +2205,8 @@ function initGift() {
   };
 
   const open = () => {
-    if (opened) return;
-    opened = true;
+    if (giftOpened) return;
+    giftOpened = true;
     wrap.style.animation = 'none';
     hint.classList.add('hidden');
 
@@ -1648,7 +2247,9 @@ function initGift() {
 
 /* Grand finale — no persistent black overlay */
 let finaleDone = false;
-function initFinale() {
+function initFinale() { setupFinaleAnim(); }
+
+function setupFinaleAnim() {
   const obs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting && !finaleDone) { finaleDone = true; triggerFinale(); obs.disconnect(); }
   }, { threshold: .3 });
@@ -1683,6 +2284,8 @@ const REEL_ITEMS = [
   { emoji: '✈️', label: 'Travel' }
 ];
 
+let epDone = false;
+
 function initEpilogue() {
   const reel = document.getElementById('memory-reel');
   const cards = [...REEL_ITEMS, ...REEL_ITEMS].map(r =>
@@ -1700,7 +2303,12 @@ function initEpilogue() {
   }
 
   /* Closing sequence on scroll into view */
-  let epDone = false;
+  setupEpilogueAnim();
+
+  document.getElementById('btn-replay').addEventListener('click', replayJourney);
+}
+
+function setupEpilogueAnim() {
   const obs = new IntersectionObserver(entries => {
     if (entries[0].isIntersecting && !epDone) {
       epDone = true;
@@ -1710,13 +2318,10 @@ function initEpilogue() {
   }, { threshold: .15 });
   obs.observe(document.getElementById('epilogue'));
 
-  /* Reveal epilogue elements */
   const epObs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); epObs.unobserve(e.target); } });
   }, { threshold: .1 });
-  document.querySelectorAll('#epilogue .reveal').forEach(el => epObs.observe(el));
-
-  document.getElementById('btn-replay').addEventListener('click', replayJourney);
+  document.querySelectorAll('#epilogue .reveal:not(.on)').forEach(el => epObs.observe(el));
 }
 
 function runClosingSequence() {
@@ -1736,16 +2341,125 @@ function runClosingSequence() {
   setTimeout(() => { numEl.classList.remove('show'); nextEl.classList.add('show'); }, 5500);
 }
 
-function replayJourney() {
+function resetJourneyState() {
+  /* Close modals & tooltips */
+  ['lightbox', 'story-modal', 'photo-lightbox'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.classList.remove('open'); el.setAttribute('aria-hidden', 'true'); }
+  });
+  document.getElementById('city-tooltip')?.classList.remove('show');
+
+  /* Stop celebration overlays */
   fireworks.stop();
-  confetti.burst(80);
-  music.stop();
-  setTimeout(() => music.start(), 300);
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
-  /* Reset finale flag so stars can replay if scrolled again */
+  confetti.on = false;
+  confetti.p = [];
+  if (confetti.x) confetti.x.clearRect(0, 0, confetti.c.width, confetti.c.height);
+
+  /* Reset scroll-reveal animations */
+  document.querySelectorAll('.reveal').forEach(el => el.classList.remove('on'));
+
+  /* Timeline */
+  document.querySelectorAll('.tl-item').forEach(it => it.classList.remove('on'));
+  const fill = document.getElementById('tl-fill');
+  if (fill) fill.style.height = '0%';
+
+  /* Constellation */
+  constellationRevealed = 0;
+  document.querySelectorAll('.const-star').forEach(s => s.classList.remove('on', 'active', 'revealed'));
+  document.querySelectorAll('.const-line').forEach(l => { l.style.opacity = '0'; });
+  const panel = document.getElementById('constellation-panel');
+  if (panel) {
+    panel.classList.add('empty');
+    panel.classList.remove('has-trait');
+    panel.textContent = 'Click a star to reveal a quality…';
+  }
+
+  /* Polaroid memories */
+  document.getElementById('years-stage')?.classList.remove('lines-on');
+
+  /* Letter */
+  letterDone = false;
+  const letterBody = document.getElementById('letter-body');
+  const cursor = document.getElementById('letter-cursor');
+  if (letterBody && cursor) {
+    Array.from(letterBody.childNodes).forEach(n => { if (n !== cursor) letterBody.removeChild(n); });
+    cursor.style.display = '';
+  }
+
+  /* Cake */
+  candlesLeft = 28;
+  const cakeCount = document.getElementById('cake-count');
+  if (cakeCount) cakeCount.textContent = '28';
+  document.getElementById('wish-msg')?.classList.remove('show');
+  document.querySelectorAll('.candle').forEach(c => c.classList.remove('out'));
+
+  /* Gift box */
+  giftOpened = false;
+  const giftHero = document.getElementById('gift-hero');
+  const giftWrap = document.getElementById('gift-wrap');
+  if (giftHero) giftHero.classList.remove('stage-shake', 'stage-glow', 'stage-open');
+  if (giftWrap) giftWrap.style.animation = '';
+  document.getElementById('gift-hint')?.classList.remove('hidden');
+  document.getElementById('gift-rewards-zone')?.classList.remove('show');
+  document.querySelectorAll('.reward-card').forEach(c => c.classList.remove('show', 'glow-flash'));
+  document.getElementById('btn-continue')?.classList.remove('show');
+  const burst = document.getElementById('gift-burst');
+  if (burst) { burst.classList.remove('on'); burst.innerHTML = ''; }
+
+  /* Finale */
   finaleDone = false;
-  document.getElementById('finale-inner').classList.remove('animate-in');
+  document.getElementById('finale-inner')?.classList.remove('animate-in');
+  const finaleStars = document.getElementById('finale-stars');
+  if (finaleStars) finaleStars.innerHTML = '';
+
+  /* Epilogue closing sequence */
+  epDone = false;
+  ['closing-name', 'closing-num', 'closing-next'].forEach(id => {
+    document.getElementById(id)?.classList.remove('show');
+  });
+  const closingSvg = document.getElementById('closing-svg');
+  if (closingSvg) closingSvg.innerHTML = '';
+  document.querySelectorAll('#epilogue .reveal').forEach(el => el.classList.remove('on'));
+
+  /* Degree hero */
+  degreeDone = false;
+  document.getElementById('degree-hero')?.classList.remove('in-view');
+
+  bootstrapImages();
+}
+
+function retriggerScrollAnimations() {
+  setupScrollReveal();
+  setupJourneyAnim();
+  setupDegreeAnim();
+  setupConstellationReveal();
+  setupYearsReveal();
+  setupLetterAnim();
+  setupFinaleAnim();
+  setupEpilogueAnim();
+}
+
+let replaying = false;
+
+function replayJourney() {
+  if (replaying) return;
+  replaying = true;
+
+  const overlay = document.getElementById('replay-overlay');
+  overlay.classList.add('show');
+  overlay.setAttribute('aria-hidden', 'false');
+
+  resetJourneyState();
+  music.stop();
+  music.restart();
+
+  setTimeout(() => {
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden', 'true');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    retriggerScrollAnimations();
+    replaying = false;
+  }, 2000);
 }
 </script>
 
